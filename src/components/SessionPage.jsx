@@ -1,4 +1,3 @@
-// src/pages/SessionPage.js
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
@@ -49,7 +48,7 @@ const SessionPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-screen bg-gray-100">
-      <div className="flex flex-col items-center justify-center h-screen w-full max-w-md space-y-4">
+      <div className="flex flex-col items-center justify-center h-full w-full max-w-xs space-y-4 p-4">
         <Timer duration={currentDuration} onEnd={handleEnd} resetKey={resetKey} />
         {!isSessionCompleted && (
           <button

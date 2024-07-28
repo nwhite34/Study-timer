@@ -68,9 +68,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-full p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen p-4 sm:p-6 md:p-8 mx-auto">
       {user && (
-        <div className="w-full max-w-2xl space-y-8 bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <div className="w-full max-w-lg space-y-8 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-center text-gray-900">
             Welcome, {user.email}
           </h2>
@@ -82,34 +82,34 @@ const Dashboard = () => {
             Sign Out
           </button>
 
-          <div className="flex flex-wrap justify-center space-x-2 mt-4">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             <button
               onClick={() => startSession(60)}
-              className="flex-1 py-2 m-1 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
             >
               1M
             </button>
             <button
               onClick={() => startSession(90 * 60)}
-              className="flex-1 py-2 m-1 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
             >
               90M
             </button>
             <button
               onClick={() => startSession(60 * 60)}
-              className="flex-1 py-2 m-1 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
             >
               1H
             </button>
             <button
               onClick={() => startSession(4 * 60 * 60)}
-              className="flex-1 py-2 m-1 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
             >
               4H
             </button>
             <button
               onClick={() => startSession(6 * 60 * 60)}
-              className="flex-1 py-2 m-1 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
             >
               6H
             </button>

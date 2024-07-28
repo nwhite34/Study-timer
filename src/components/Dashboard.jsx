@@ -11,7 +11,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch user data
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
         setUser(currentUser);
@@ -21,31 +20,26 @@ const Dashboard = () => {
       }
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, [navigate]);
 
-  // Fetch study sessions from Firestore
   const fetchSessions = async (userId) => {
     try {
       const sessionsRef = collection(db, 'sessions');
       const q = query(sessionsRef, where('userId', '==', userId));
       const querySnapshot = await getDocs(q);
       const sessionsData = querySnapshot.docs.map((doc) => doc.data());
-      console.log('Fetched sessions:', sessionsData);
       setSessions(sessionsData);
     } catch (error) {
       console.error('Error fetching sessions:', error);
     }
   };
 
-  // Function to handle sign out
   const handleSignOut = async () => {
     await signOut(auth);
     navigate('/');
   };
 
-  // Function to start a session
   const startSession = (duration) => {
     navigate('/session', { state: { duration } });
   };
@@ -63,7 +57,7 @@ const Dashboard = () => {
 
   const calculateOverallProgress = () => {
     const totalStudyTime = calculateTotalStudyTime();
-    const totalPossibleTime = sessions.length * 6 * 60 * 60; // Assuming max session is 6 hours
+    const totalPossibleTime = sessions.length * 6 * 60 * 60;
     return (totalStudyTime / totalPossibleTime) * 100;
   };
 
@@ -85,31 +79,31 @@ const Dashboard = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             <button
               onClick={() => startSession(60)}
-              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-white bg-black rounded-lg focus:outline-none hover:bg-gray-800"
             >
               1M
             </button>
             <button
               onClick={() => startSession(90 * 60)}
-              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-white bg-black rounded-lg focus:outline-none hover:bg-gray-800"
             >
               90M
             </button>
             <button
               onClick={() => startSession(60 * 60)}
-              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-white bg-black rounded-lg focus:outline-none hover:bg-gray-800"
             >
               1H
             </button>
             <button
               onClick={() => startSession(4 * 60 * 60)}
-              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-white bg-black rounded-lg focus:outline-none hover:bg-gray-800"
             >
               4H
             </button>
             <button
               onClick={() => startSession(6 * 60 * 60)}
-              className="col-span-1 py-2 text-center text-black border border-black rounded-lg focus:outline-none hover:bg-gray-100"
+              className="col-span-1 py-2 text-center text-white bg-black rounded-lg focus:outline-none hover:bg-gray-800"
             >
               6H
             </button>

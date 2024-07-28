@@ -11,18 +11,15 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         navigate('/dashboard');
       }
     });
 
-    // Cleanup subscription on unmount
     return () => unsubscribe();
   }, [navigate]);
 
-  // Function to handle user login
   const loginUser = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -33,7 +30,6 @@ const HomePage = () => {
     }
   };
 
-  // Function to handle user sign-up
   const signUpUser = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -44,7 +40,6 @@ const HomePage = () => {
     }
   };
 
-  // Function to handle authentication errors
   const handleAuthError = (error) => {
     switch (error.code) {
       case 'auth/email-already-in-use':

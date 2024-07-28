@@ -63,7 +63,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white w-screen px-4">
       <div className="w-full max-w-xs p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-900">Study Timer</h2>
 

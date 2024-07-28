@@ -37,7 +37,7 @@ const Timer = ({ duration, onEnd, resetKey }) => {
     <div className="text-center w-full">
       {!showAnimation ? (
         <>
-          <div className="text-3xl mb-4">{formatTime(time)}</div>
+          <div className="text-3xl mb-4 text-black ">{formatTime(time)}</div>
           <BatteryBar percentage={calculatePercentage()} />
         </>
       ) : (

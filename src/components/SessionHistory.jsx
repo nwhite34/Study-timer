@@ -40,7 +40,7 @@ const SessionHistory = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-black w-screen px-4">
       <div className="w-full max-w-xs p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <button
           onClick={goBack}

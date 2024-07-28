@@ -47,26 +47,26 @@ const SessionPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-screen bg-gray-100">
-      <div className="flex flex-col items-center justify-center h-full w-full max-w-xs space-y-4 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen w-screen bg-gray-100 px-4">
+      <div className="flex flex-col items-center justify-center h-full w-full max-w-xs space-y-4 p-4 bg-white rounded-lg shadow-lg">
         <Timer duration={currentDuration} onEnd={handleEnd} resetKey={resetKey} />
         {!isSessionCompleted && (
           <button
             onClick={() => extendTime(30 * 60)}
-            className="w-full py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600"
+            className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600"
           >
             Extend Time by 30 Minutes
           </button>
         )}
         <button
           onClick={resetTimer}
-          className="w-full py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600"
+          className="w-full py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-red-600"
         >
           Reset
         </button>
         <button
           onClick={goBack}
-          className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
           Go Back
         </button>

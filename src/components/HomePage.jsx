@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
@@ -69,8 +68,8 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen px-4">
+      <div className="w-full max-w-xs p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-900">Study Timer</h2>
 
         {error && <p className="text-red-500">{error}</p>}

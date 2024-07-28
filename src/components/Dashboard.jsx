@@ -68,9 +68,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen p-4 sm:p-6 md:p-8 mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen p-4 sm:p-6 md:p-8">
       {user && (
-        <div className="w-full max-w-lg space-y-8 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+        <div className="w-full max-w-xs space-y-8 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-center text-gray-900">
             Welcome, {user.email}
           </h2>

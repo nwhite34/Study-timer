@@ -1,4 +1,3 @@
-// src/pages/SessionHistory.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
@@ -41,8 +40,8 @@ const SessionHistory = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen">
-      <div className="w-full max-w-2xl p-8 space-y-8 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 w-screen px-4">
+      <div className="w-full max-w-xs p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <button
           onClick={goBack}
           className="w-full py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
